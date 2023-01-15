@@ -1,1 +1,1 @@
-export const EasyPersonalFinance = () => 'Easy Personal Finance';
+export {EasyFinance} from './EasyFinance'
