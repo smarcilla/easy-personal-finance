@@ -1,1 +1,1 @@
-export {EasyFinance} from './EasyFinance'
+export { EasyFinance } from './EasyFinance';
