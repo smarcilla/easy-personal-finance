@@ -1,5 +1,5 @@
 # Easy Personal Finance
-Simple, friendly and poweful engine to manage your personal finances easily.
+Simple, friendly and powerful engine to manage your personal finances easily.
 
 ## Instalation
 Install from npm in Nodejs
