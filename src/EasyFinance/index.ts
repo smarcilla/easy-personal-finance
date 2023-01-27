@@ -1,4 +1,5 @@
-import FinanceService from '../services/FinanceService';
+import { FinanceTransactionService } from '../services/FinanceTransactionService';
+import { MemoryFinanceTransactionService } from '../services/MemoryFinanceTransactionService';
 import EasyFinanceOptions, { FormatOptions, OriginOptions } from './EasyFinanceOptions';
 
 export const defaultEasyFinanceOptions: EasyFinanceOptions = {
@@ -9,7 +10,7 @@ export const defaultEasyFinanceOptions: EasyFinanceOptions = {
 export default class EasyFinance {
   constructor(public readonly options: EasyFinanceOptions = defaultEasyFinanceOptions) {}
 
-  getFinanceService(): FinanceService {
-    return new FinanceService();
+  getFinanceService(): FinanceTransactionService {
+    return new MemoryFinanceTransactionService();
   }
 }
