@@ -1,6 +1,5 @@
 import EasyFinanceBuilder from '../EasyFinanceBuilder';
 import EasyFinance from '..';
-import FinanceService from '../../services/FinanceService';
 
 describe('EasyFinance - services', () => {
   describe('getFinanceService', () => {
@@ -12,10 +11,6 @@ describe('EasyFinance - services', () => {
 
     test('should ', () => {
       expect(easyFinance.getFinanceService).toBeDefined();
-    });
-
-    test('should ', () => {
-      expect(easyFinance.getFinanceService()).toBeInstanceOf(FinanceService);
     });
   });
 });

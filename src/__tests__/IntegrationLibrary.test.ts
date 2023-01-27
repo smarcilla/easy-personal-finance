@@ -1,4 +1,4 @@
-import DefaultEasyFinance, { EasyFinance, EasyFinanceBuilder } from '../index';
+import DefaultEasyFinance, { EasyFinance, EasyFinanceBuilder, FinanceServiceBuilder } from '../index';
 
 describe('EasyFinance', () => {
   describe('default branch', () => {
@@ -15,6 +15,14 @@ describe('EasyFinance', () => {
   describe('branch 2', () => {
     test('should ', () => {
       expect(EasyFinanceBuilder).toBeDefined();
+    });
+  });
+
+  describe('integration library - finance service builder', () => {
+    test('should ', () => {
+      const builder: FinanceServiceBuilder = new FinanceServiceBuilder();
+
+      expect(builder).toBeDefined();
     });
   });
 });
