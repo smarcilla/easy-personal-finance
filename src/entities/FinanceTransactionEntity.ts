@@ -7,4 +7,5 @@ export interface FinanceTransactionEntity extends Entity {
   movement?: string;
   amount?: number;
   notes?: string;
+  id: string;
 }

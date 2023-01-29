@@ -1,0 +1,23 @@
+[
+  {
+    "date": "01/01/2022",
+    "concept": "Transferencia bancaria",
+    "movement": "Alquiler",
+    "amount": "-1500",
+    "notes": "ALQUILER ENERO"
+  },
+  {
+    "date": "02/01/2022",
+    "concept": "Pago con tarjeta",
+    "movement": "Supermercado",
+    "amount": "-100",
+    "notes": "COMPRAS SEMANALES"
+  },
+  {
+    "date": "05/01/2022",
+    "concept": "Ingreso",
+    "movement": "Nómina",
+    "amount": "3000",
+    "notes": "SALARIO ENERO"
+  }
+]

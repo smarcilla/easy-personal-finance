@@ -1,3 +1,3 @@
-export { FinanceServiceBuilder } from './FinanceServiceBuilder';
+export { default as FinanceTransactionServiceBuilder } from './FinanceTransactionServiceBuilder';
 export { FinanceTransactionService } from './FinanceTransactionService';
 export { MemoryFinanceTransactionService } from './MemoryFinanceTransactionService';
