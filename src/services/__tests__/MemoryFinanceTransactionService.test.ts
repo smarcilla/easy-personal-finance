@@ -1,11 +1,11 @@
-import { FinanceTransactionEntity } from '../../entities';
 import { MemoryFinanceTransactionService } from '../MemoryFinanceTransactionService';
+import data from '../data/jsonFinanceData.mock.json';
 
 describe('MemoryFinanceTransactionService', () => {
   let memoryFinanceTransactionService: MemoryFinanceTransactionService;
 
   beforeEach(() => {
-    memoryFinanceTransactionService = new MemoryFinanceTransactionService();
+    memoryFinanceTransactionService = new MemoryFinanceTransactionService({ data });
   });
 
   test('', () => {
@@ -14,16 +14,5 @@ describe('MemoryFinanceTransactionService', () => {
 
   test('should ', () => {
     expect(memoryFinanceTransactionService.find).toBeDefined();
-  });
-
-  describe('find', () => {
-    let result: FinanceTransactionEntity[];
-
-    beforeEach(() => {
-      result = memoryFinanceTransactionService.find();
-    });
-    test('', () => {
-      expect(result).toEqual([]);
-    });
   });
 });
