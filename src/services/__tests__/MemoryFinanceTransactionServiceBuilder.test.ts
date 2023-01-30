@@ -7,7 +7,7 @@ jest.mock('../MemoryFinanceTransactionService', () => {
 import { MemoryFinanceTransactionService } from '../MemoryFinanceTransactionService';
 
 import MemoryFinanceTransactionServiceBuilder from '../MemoryFinanceTransactionServiceBuilder';
-import data from '../data/jsonFinanceData.mock.json';
+import data from '../../data/jsonFinanceData.mock.json';
 
 describe('MemoryFinanceTransactionServiceBuilder', () => {
   let builder: MemoryFinanceTransactionServiceBuilder;
