@@ -1,4 +1,4 @@
-import FinanceTransactionEntity from '../entities';
+import {FinanceTransactionEntity} from '../entities';
 import Repository from './Repository';
 
 export default class FinanceTransactionRepository implements Repository<FinanceTransactionEntity> {
