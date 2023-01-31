@@ -1,4 +1,5 @@
 {
+  "roots": ["<rootDir>/src"],
   "transform": {
     "^.+\\.(t|j)sx?$": "ts-jest"
   },
@@ -7,7 +8,7 @@
 
   "clearMocks": true,
 
-  "collectCoverage": false,
+  "collectCoverage": true,
 
   "coverageDirectory": "coverage",
 
