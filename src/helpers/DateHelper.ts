@@ -1,7 +1,7 @@
 export default class DateHelper {
-  constructor(readonly targetDate: string) {}
+  constructor(private readonly dateString: string) {}
 
   parseDate(): Date {
-    return new Date(this.targetDate);
+    return new Date(this.dateString);
   }
 }
