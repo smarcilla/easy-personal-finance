@@ -1,6 +1,6 @@
-import EasyFinanceModule from './EasyFinance';
+import EasyFinance from './EasyFinance';
+
+export { default as EasyFinance } from './EasyFinance';
 export * from './services';
 
-export const EasyFinance = EasyFinanceModule;
-
-export default EasyFinanceModule;
+export default EasyFinance;

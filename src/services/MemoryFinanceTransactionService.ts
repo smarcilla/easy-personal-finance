@@ -6,7 +6,7 @@ import { FinanceTransactionEntityBuilder } from '../entities/FinanceTransactionE
 export class MemoryFinanceTransactionService implements FinanceTransactionService {
   constructor(private options: { data: JsonFinanceData[] }) {}
 
-  filter(filter: Partial<{ text: string }>): JsonFinanceData[] {
+  private filter(filter: Partial<{ text: string }>): JsonFinanceData[] {
     return filter?.text
       ? this.options.data.filter((data) => {
           return (
