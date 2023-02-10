@@ -3,7 +3,7 @@ import { JsonFinanceData } from '../entities/JsonFinanceData';
 import { FinanceTransactionService } from './FinanceTransactionService';
 import { FinanceTransactionEntityBuilder } from '../entities/FinanceTransactionEntityBuilder';
 
-export class MemoryFinanceTransactionService implements FinanceTransactionService {
+export class MemoryTransactionService implements FinanceTransactionService {
   constructor(private options: { data: JsonFinanceData[] }) {}
 
   private filter(filter: Partial<{ text: string }>): JsonFinanceData[] {

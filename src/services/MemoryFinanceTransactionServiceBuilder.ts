@@ -1,5 +1,5 @@
 import { JsonFinanceData } from '../entities/JsonFinanceData';
-import { MemoryFinanceTransactionService } from './MemoryFinanceTransactionService';
+import { MemoryTransactionService } from './MemoryTransactionService';
 
 export default class MemoryFinanceTransactionServiceBuilder {
   private data!: JsonFinanceData[];
@@ -8,7 +8,7 @@ export default class MemoryFinanceTransactionServiceBuilder {
 
     return this;
   }
-  build(): MemoryFinanceTransactionService {
-    return new MemoryFinanceTransactionService({ data: this.data || [] });
+  build(): MemoryTransactionService {
+    return new MemoryTransactionService({ data: this.data || [] });
   }
 }

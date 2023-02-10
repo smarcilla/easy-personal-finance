@@ -8,9 +8,9 @@ import data from '../data/jsonFinanceData.mock.json';
 jest.mock('../helpers');
 
 describe('find transactions', () => {
-  describe('when origin is memory', () => {
+  describe('when data comes from json data type', () => {
     test('should ', () => {
-      expect(new EasyFinance().transactions.withOrigin('memory').withData(data).build().find()).toEqual([
+      expect(new EasyFinance().transactions.withType('json-data').withData(data).build().find()).toEqual([
         {
           amount: -1500,
           concept: 'Transferencia bancaria',
@@ -43,7 +43,7 @@ describe('find transactions', () => {
 
     test('should ', () => {
       expect(
-        new EasyFinance().transactions.withOrigin('memory').withData(data).build().find({ text: 'Supermercado' }),
+        new EasyFinance().transactions.withType('json-data').withData(data).build().find({ text: 'Supermercado' }),
       ).toEqual([
         {
           amount: -100,
