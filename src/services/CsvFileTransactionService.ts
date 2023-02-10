@@ -1,3 +1,4 @@
+/* tslint:disable no-var-requires */
 const CsvToJson = require('convert-csv-to-json');
 import { JsonFinanceData } from '../entities/JsonFinanceData';
 import { CsvFinanceData } from '../types/transactions.type';

@@ -1,3 +1,4 @@
+/* tslint:disable no-var-requires */
 const Multipart = require('parse-multipart-data');
 import { FinanceTransactionEntity } from '../entities';
 import { JsonFinanceData } from '../entities/JsonFinanceData';

@@ -1,3 +1,4 @@
+/* tslint:disable max-classes-per-file */
 import { JsonFinanceData } from '../entities/JsonFinanceData';
 import { FileFormatType, FormDataFormatDataType, OriginFormatType, TransactionData } from '../types/transactions.type';
 import { CsvFileTransactionService } from './CsvFileTransactionService';
