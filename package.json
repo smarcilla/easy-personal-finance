@@ -45,5 +45,11 @@
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "convert-csv-to-json": "^1.5.0",
+    "moment": "^2.29.4",
+    "parse-multipart-data": "^1.5.0"
   }
 }

@@ -1,5 +1,5 @@
 import { FinanceTransactionEntity } from '../entities';
 
 export interface FinanceTransactionService {
-  find(filter: Partial<{ text: string }>): FinanceTransactionEntity[];
+  find(filter?: Partial<{ text: string }>): FinanceTransactionEntity[];
 }

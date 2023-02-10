@@ -2,8 +2,16 @@ import { default as DateHelper } from '../DateHelper';
 
 describe('DateHelper', () => {
   describe('parseDate', () => {
-    test('when', () => {
-      expect(new DateHelper('2023-01-14T12:00').parseDate()).toEqual(new Date('2023-01-14T12:00'));
+    let dateDraft: string;
+
+    describe('when date is in spanish format', () => {
+      beforeEach(() => {
+        dateDraft = '30/01/2023';
+      });
+
+      test('should return expected date', () => {
+        expect(new DateHelper(dateDraft).parseDate()).toEqual(new Date('2023-01-30T00:00:00.000Z'));
+      });
     });
   });
 });

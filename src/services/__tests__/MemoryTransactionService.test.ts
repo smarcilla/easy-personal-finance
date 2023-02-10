@@ -1,13 +1,13 @@
-import { MemoryFinanceTransactionService } from '../MemoryFinanceTransactionService';
+import { MemoryTransactionService } from '../MemoryTransactionService';
 import data from '../../data/jsonFinanceData.mock.json';
 
 jest.mock('../../helpers');
 
 describe('MemoryFinanceTransactionService', () => {
-  let memoryFinanceTransactionService: MemoryFinanceTransactionService;
+  let memoryFinanceTransactionService: MemoryTransactionService;
 
   beforeEach(() => {
-    memoryFinanceTransactionService = new MemoryFinanceTransactionService({ data });
+    memoryFinanceTransactionService = new MemoryTransactionService({ data });
   });
 
   test('', () => {

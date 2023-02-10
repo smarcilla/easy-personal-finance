@@ -1,15 +1,15 @@
 const mockService = jest.fn();
 
-jest.mock('../MemoryFinanceTransactionService', () => {
-  return { MemoryFinanceTransactionService: jest.fn().mockImplementation(() => mockService) };
+jest.mock('../MemoryTransactionService', () => {
+  return { MemoryTransactionService: jest.fn().mockImplementation(() => mockService) };
 });
 
-import { MemoryFinanceTransactionService } from '../MemoryFinanceTransactionService';
+import { MemoryTransactionService } from '../MemoryTransactionService';
 
 import MemoryFinanceTransactionServiceBuilder from '../MemoryFinanceTransactionServiceBuilder';
 import data from '../../data/jsonFinanceData.mock.json';
 
-describe('MemoryFinanceTransactionServiceBuilder', () => {
+describe('MemoryTransactionServiceBuilder', () => {
   let builder: MemoryFinanceTransactionServiceBuilder;
 
   beforeEach(() => {
@@ -35,7 +35,7 @@ describe('MemoryFinanceTransactionServiceBuilder', () => {
 
     test('should ', () => {
       new MemoryFinanceTransactionServiceBuilder().build();
-      expect(MemoryFinanceTransactionService).toHaveBeenCalledWith({ data: [] });
+      expect(MemoryTransactionService).toHaveBeenCalledWith({ data: [] });
     });
   });
 
@@ -47,7 +47,7 @@ describe('MemoryFinanceTransactionServiceBuilder', () => {
     test('should ', () => {
       new MemoryFinanceTransactionServiceBuilder().withData(data).build();
 
-      expect(MemoryFinanceTransactionService).toHaveBeenCalledWith({ data });
+      expect(MemoryTransactionService).toHaveBeenCalledWith({ data });
     });
   });
 });
