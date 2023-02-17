@@ -18,7 +18,9 @@ describe('FinanceTransactionServiceBuilder', () => {
 
   describe('when branch 1', () => {
     test('should ', () => {
-      expect(builder.withOrigin('memory')).toBeInstanceOf(MemoryFinanceTransactionServiceBuilder);
+      expect(builder.withOrigin('memory')).toBeInstanceOf(
+        MemoryFinanceTransactionServiceBuilder
+      );
     });
   });
 });

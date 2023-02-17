@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { FinanceTransactionEntity } from '../../entities';
 
 export class IncomeService {
   constructor(protected readonly financeEntities: FinanceTransactionEntity[]) {}
 
   protected filterIncomes() {
-    return this.financeEntities.filter((entity) => entity.type === 'income');
+    return this.financeEntities.filter(entity => entity.type === 'income');
   }
 
   protected calculateByConcept() {
@@ -69,8 +70,6 @@ export class IncomeService {
 
       case 'notes':
         totalsBy = this.calculateByNotes();
-
-      default:
         break;
     }
 

@@ -1,7 +1,9 @@
 const mockService = jest.fn();
 
 jest.mock('../MemoryTransactionService', () => {
-  return { MemoryTransactionService: jest.fn().mockImplementation(() => mockService) };
+  return {
+    MemoryTransactionService: jest.fn().mockImplementation(() => mockService)
+  };
 });
 
 import { MemoryTransactionService } from '../MemoryTransactionService';
@@ -30,7 +32,9 @@ describe('MemoryTransactionServiceBuilder', () => {
 
   describe('when build is called', () => {
     test('should ', () => {
-      expect(new MemoryFinanceTransactionServiceBuilder().build()).toEqual(mockService);
+      expect(new MemoryFinanceTransactionServiceBuilder().build()).toEqual(
+        mockService
+      );
     });
 
     test('should ', () => {
@@ -41,7 +45,9 @@ describe('MemoryTransactionServiceBuilder', () => {
 
   describe('when withData is called', () => {
     test('should ', () => {
-      expect(new MemoryFinanceTransactionServiceBuilder().withData(data).build()).toEqual(mockService);
+      expect(
+        new MemoryFinanceTransactionServiceBuilder().withData(data).build()
+      ).toEqual(mockService);
     });
 
     test('should ', () => {

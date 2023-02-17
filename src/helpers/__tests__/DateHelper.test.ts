@@ -10,7 +10,9 @@ describe('DateHelper', () => {
       });
 
       test('should return expected date', () => {
-        expect(new DateHelper(dateDraft).parseDate()).toEqual(new Date('2023-01-30T00:00:00.000Z'));
+        expect(new DateHelper(dateDraft).parseDate()).toEqual(
+          new Date('2023-01-30T00:00:00.000Z')
+        );
       });
     });
   });

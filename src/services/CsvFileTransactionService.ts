@@ -1,4 +1,4 @@
-/* tslint:disable no-var-requires */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const CsvToJson = require('convert-csv-to-json');
 import { JsonFinanceData } from '../entities/JsonFinanceData';
 import { CsvFinanceData } from '../types/transactions.type';
@@ -12,11 +12,13 @@ export class CsvFileTransactionService {
       concept: data.Concepto,
       movement: data.Movimiento,
       amount: data.Importe,
-      notes: data.Observaciones,
+      notes: data.Observaciones
     };
   }
 
   format(): JsonFinanceData[] {
-    return CsvToJson.fieldDelimiter(';').csvStringToJson(this.data.toString()).map(this.map);
+    return CsvToJson.fieldDelimiter(';')
+      .csvStringToJson(this.data.toString())
+      .map(this.map);
   }
 }

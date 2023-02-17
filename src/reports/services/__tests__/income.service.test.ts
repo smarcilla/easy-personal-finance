@@ -9,7 +9,10 @@ describe('Income service', () => {
   let incomeService: IncomeService;
 
   beforeEach(() => {
-    financeEntities = new MemoryFinanceTransactionServiceBuilder().withData(financeData).build().find();
+    financeEntities = new MemoryFinanceTransactionServiceBuilder()
+      .withData(financeData)
+      .build()
+      .find();
     incomeService = new IncomeService(financeEntities);
   });
 
