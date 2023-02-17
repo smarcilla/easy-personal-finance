@@ -11,11 +11,11 @@ export class JsonFileTransactionService {
         concept: { type: 'string' },
         movement: { type: 'string' },
         notes: { type: 'string' },
-        amount: { type: 'string' },
+        amount: { type: 'string' }
       },
       required: ['date', 'concept', 'movement', 'amount'],
-      additionalProperties: false,
-    },
+      additionalProperties: false
+    }
   };
 
   private validator: ValidateFunction<JsonFinanceData[]>;

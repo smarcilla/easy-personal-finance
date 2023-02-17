@@ -1,6 +1,10 @@
 /* tslint:disable max-classes-per-file */
 import { JsonFinanceData } from '../entities/JsonFinanceData';
-import { FileFormatType, FormDataFormatDataType, OriginFormatType, TransactionData } from '../types/transactions.type';
+import {
+  FileFormatType,
+  FormDataFormatDataType,
+  TransactionData
+} from '../types/transactions.type';
 import { CsvFileTransactionService } from './CsvFileTransactionService';
 import { FinanceTransactionService } from './FinanceTransactionService';
 import { FormDataTransactionService } from './FormDataTransactionService';
@@ -37,7 +41,9 @@ export class FileTransactionServiceBuilder {
   }
 }
 
-export class FormDataFinanceTransactionServiceBuilder implements TransactionServiceBuilder {
+export class FormDataFinanceTransactionServiceBuilder
+  implements TransactionServiceBuilder
+{
   private data!: FormDataFormatDataType;
 
   withData(data: FormDataFormatDataType) {
@@ -51,7 +57,9 @@ export class FormDataFinanceTransactionServiceBuilder implements TransactionServ
   }
 }
 
-export class MemoryFinanceTransactionServiceBuilder implements TransactionServiceBuilder {
+export class MemoryFinanceTransactionServiceBuilder
+  implements TransactionServiceBuilder
+{
   private data!: JsonFinanceData[];
   withData(data: JsonFinanceData[]) {
     this.data = data;

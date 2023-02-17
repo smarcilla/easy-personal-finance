@@ -9,7 +9,10 @@ describe('BalanceSheetService', () => {
   let balanceSheetService: BalanceSheetService;
 
   beforeEach(() => {
-    financeEntities = new MemoryFinanceTransactionServiceBuilder().withData(financeData).build().find();
+    financeEntities = new MemoryFinanceTransactionServiceBuilder()
+      .withData(financeData)
+      .build()
+      .find();
     balanceSheetService = new BalanceSheetService(financeEntities);
   });
   describe('calculate report', () => {
@@ -18,7 +21,9 @@ describe('BalanceSheetService', () => {
     });
 
     test('should return total expenses', () => {
-      expect(balanceSheetService.calculateReport().totalExpenses).toEqual(-1600);
+      expect(balanceSheetService.calculateReport().totalExpenses).toEqual(
+        -1600
+      );
     });
 
     test('should return total balance', () => {

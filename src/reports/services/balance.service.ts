@@ -5,13 +5,17 @@ export class BalanceSheetService {
   constructor(private readonly financeEntities: FinanceTransactionEntity[]) {}
 
   private calculateTotal(type: 'income' | 'expense'): number {
-    return this.financeEntities.reduce((previousTotal: number, currentEntity) => {
-      if (currentEntity.type === type) {
-        return previousTotal + currentEntity.amount!;
-      }
+    return this.financeEntities.reduce(
+      (previousTotal: number, currentEntity) => {
+        if (currentEntity.type === type) {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          return previousTotal + currentEntity.amount!;
+        }
 
-      return previousTotal;
-    }, 0);
+        return previousTotal;
+      },
+      0
+    );
   }
 
   private calculateBalance(incomes: number, expenses: number): number {
@@ -25,7 +29,7 @@ export class BalanceSheetService {
     return {
       totalIncomes,
       totalExpenses,
-      totalBalance: this.calculateBalance(totalIncomes, totalExpenses),
+      totalBalance: this.calculateBalance(totalIncomes, totalExpenses)
     };
   }
 }

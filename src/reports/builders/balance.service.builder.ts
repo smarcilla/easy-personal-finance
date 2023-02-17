@@ -1,4 +1,3 @@
-import { FinanceTransactionEntity } from '../../entities';
 import { BalanceSheetService } from '../services';
 import { BaseReportServiceBuilder } from './base.service.builder';
 

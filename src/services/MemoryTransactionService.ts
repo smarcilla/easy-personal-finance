@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { FinanceTransactionEntity } from '../entities';
 import { JsonFinanceData } from '../entities/JsonFinanceData';
 import { FinanceTransactionService } from './FinanceTransactionService';
@@ -8,7 +9,7 @@ export class MemoryTransactionService implements FinanceTransactionService {
 
   private filter(filter: Partial<{ text: string }>): JsonFinanceData[] {
     return filter?.text
-      ? this.options.data.filter((data) => {
+      ? this.options.data.filter(data => {
           return (
             data.amount.includes(filter.text!) ||
             data.concept.includes(filter.text!) ||
@@ -21,7 +22,7 @@ export class MemoryTransactionService implements FinanceTransactionService {
   }
 
   find(filter: Partial<{ text: string }> = {}): FinanceTransactionEntity[] {
-    return this.filter(filter).map((data) => {
+    return this.filter(filter).map(data => {
       return new FinanceTransactionEntityBuilder()
         .withAmount(data.amount)
         .withConcept(data.concept)

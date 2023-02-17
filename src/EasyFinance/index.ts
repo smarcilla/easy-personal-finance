@@ -1,4 +1,4 @@
-import { ReportServiceBuilder } from '../reports/builders';
+import { ReportServiceBuilder } from '../reports';
 import { FinanceTransactionServiceBuilder } from '../services';
 
 export class EasyFinance {

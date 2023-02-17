@@ -44,7 +44,7 @@ export class FinanceTransactionEntityBuilder {
       movement: this.data.movement,
       amount: this.data.amount,
       notes: this.data.notes,
-      id: new FinanceTransactionEntityIdBuilder().withData(this.data).build(),
+      id: new FinanceTransactionEntityIdBuilder().withData(this.data).build()
     };
   }
 }

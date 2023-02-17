@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import crypto from 'crypto';
 import { FinanceTransactionEntity } from './FinanceTransactionEntity';
 

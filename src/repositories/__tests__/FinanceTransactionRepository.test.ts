@@ -21,7 +21,7 @@ describe('Name of the group', () => {
           concept: 'Transferencia bancaria',
           movement: 'Alquiler',
           amount: -1500,
-          notes: 'ALQUILER ENERO',
+          notes: 'ALQUILER ENERO'
         },
         {
           id: '2',
@@ -29,7 +29,7 @@ describe('Name of the group', () => {
           concept: 'Pago con tarjeta',
           movement: 'Supermercado',
           amount: -100,
-          notes: 'COMPRAS SEMANALES',
+          notes: 'COMPRAS SEMANALES'
         },
         {
           id: '3',
@@ -37,8 +37,8 @@ describe('Name of the group', () => {
           concept: 'Ingreso',
           movement: 'Nómina',
           amount: 3000,
-          notes: 'SALARIO ENERO',
-        },
+          notes: 'SALARIO ENERO'
+        }
       ];
 
       test('should ', () => {

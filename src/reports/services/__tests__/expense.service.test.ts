@@ -9,7 +9,10 @@ describe('Expense service', () => {
   let expenseService: ExpenseService;
 
   beforeEach(() => {
-    financeEntities = new MemoryFinanceTransactionServiceBuilder().withData(financeData).build().find();
+    financeEntities = new MemoryFinanceTransactionServiceBuilder()
+      .withData(financeData)
+      .build()
+      .find();
     expenseService = new ExpenseService(financeEntities);
   });
 
@@ -17,7 +20,7 @@ describe('Expense service', () => {
     test('should return total incomes grouped by concept type', () => {
       const expectedResult = new Map<string, number>([
         ['Pago con tarjeta', -100],
-        ['Transferencia bancaria', -1500],
+        ['Transferencia bancaria', -1500]
       ]);
       expect(expenseService.calculate('concept')).toEqual(expectedResult);
     });
@@ -27,7 +30,7 @@ describe('Expense service', () => {
     test('should return total incomes grouped by movement type', () => {
       const expectedResult = new Map<string, number>([
         ['Alquiler', -1500],
-        ['Supermercado', -100],
+        ['Supermercado', -100]
       ]);
       expect(expenseService.calculate('movement')).toEqual(expectedResult);
     });
@@ -37,7 +40,7 @@ describe('Expense service', () => {
     test('should return total incomes grouped by notes type', () => {
       const expectedResult = new Map<string, number>([
         ['ALQUILER ENERO', -1500],
-        ['COMPRAS SEMANALES', -100],
+        ['COMPRAS SEMANALES', -100]
       ]);
       expect(expenseService.calculate('notes')).toEqual(expectedResult);
     });

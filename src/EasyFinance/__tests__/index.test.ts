@@ -16,7 +16,9 @@ describe('index module', () => {
     });
 
     test('should ', () => {
-      expect(easyFinance.transactions).toBeInstanceOf(FinanceTransactionServiceBuilder);
+      expect(easyFinance.transactions).toBeInstanceOf(
+        FinanceTransactionServiceBuilder
+      );
     });
   });
 });

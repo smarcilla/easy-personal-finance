@@ -10,7 +10,13 @@ jest.mock('../helpers');
 describe('find transactions', () => {
   describe('when data comes from json data type', () => {
     test('should ', () => {
-      expect(new EasyFinance().transactions.withType('json-data').withData(data).build().find()).toEqual([
+      expect(
+        new EasyFinance().transactions
+          .withType('json-data')
+          .withData(data)
+          .build()
+          .find()
+      ).toEqual([
         {
           amount: -1500,
           concept: 'Transferencia bancaria',
@@ -18,7 +24,7 @@ describe('find transactions', () => {
           id: 'x2PIGpCxRHgeQzOW8sChUDlvQEm/VSsH+NIoGo2eQqo=',
           movement: 'Alquiler',
           notes: 'ALQUILER ENERO',
-          type: 'expense',
+          type: 'expense'
         },
         {
           amount: -100,
@@ -27,7 +33,7 @@ describe('find transactions', () => {
           id: 'SDT2eCUOzQOguWOoUFNVW5C9LnoMsfWBFsyOtW74SlU=',
           movement: 'Supermercado',
           notes: 'COMPRAS SEMANALES',
-          type: 'expense',
+          type: 'expense'
         },
         {
           amount: 3000,
@@ -36,14 +42,18 @@ describe('find transactions', () => {
           id: 'UKloix/6t9ziV82V2RA0zcgG2/f5Z3981hywLnovo80=',
           movement: 'Nómina',
           notes: 'SALARIO ENERO',
-          type: 'income',
-        },
+          type: 'income'
+        }
       ]);
     });
 
     test('should ', () => {
       expect(
-        new EasyFinance().transactions.withType('json-data').withData(data).build().find({ text: 'Supermercado' }),
+        new EasyFinance().transactions
+          .withType('json-data')
+          .withData(data)
+          .build()
+          .find({ text: 'Supermercado' })
       ).toEqual([
         {
           amount: -100,
@@ -52,8 +62,8 @@ describe('find transactions', () => {
           id: 'SDT2eCUOzQOguWOoUFNVW5C9LnoMsfWBFsyOtW74SlU=',
           movement: 'Supermercado',
           notes: 'COMPRAS SEMANALES',
-          type: 'expense',
-        },
+          type: 'expense'
+        }
       ]);
     });
   });
