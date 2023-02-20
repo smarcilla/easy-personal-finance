@@ -1,4 +1,4 @@
-import Entity from './Entity';
+import { Entity } from '..';
 
 export interface FinanceTransactionEntity extends Entity {
   type?: 'income' | 'expense';
@@ -7,5 +7,4 @@ export interface FinanceTransactionEntity extends Entity {
   movement?: string;
   amount?: number;
   notes?: string;
-  id: string;
 }
