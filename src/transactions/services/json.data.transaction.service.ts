@@ -3,7 +3,8 @@ import {
   JsonTransactionData,
   JsonDataTransactionRepository,
   TransactionEntity,
-  TransactionService
+  TransactionService,
+  UniqueEntityArray
 } from '..';
 
 export class JsonDataTransactionService implements TransactionService {
@@ -22,6 +23,6 @@ export class JsonDataTransactionService implements TransactionService {
       return this.filterTransactionService.filter(transactions, filter);
     }
 
-    return transactions;
+    return new UniqueEntityArray(transactions).items;
   }
 }

@@ -11,6 +11,7 @@ import {
   FileTransactionServiceBuilder,
   MemoryFinanceTransactionServiceBuilder
 } from './services.builders';
+import { UniqueEntityArray } from '..';
 
 export class FormDataTransactionService implements FinanceTransactionService {
   constructor(private readonly data: FormDataFormatDataType) {}
@@ -42,6 +43,6 @@ export class FormDataTransactionService implements FinanceTransactionService {
       .build()
       .find(filter);
 
-    return financeEntityData;
+    return new UniqueEntityArray(financeEntityData).items;
   }
 }
