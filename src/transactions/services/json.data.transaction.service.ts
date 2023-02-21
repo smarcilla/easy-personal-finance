@@ -1,16 +1,16 @@
 import {
-  FilterTransactionService,
   JsonTransactionData,
   JsonDataTransactionRepository,
   TransactionEntity,
   TransactionService,
-  UniqueEntityArray
+  UniqueEntityArray,
+  TransactionEntityFilter
 } from '..';
 
 export class JsonDataTransactionService implements TransactionService {
   constructor(
     private readonly jsonDataTransactionRepository: JsonDataTransactionRepository,
-    private readonly filterTransactionService: FilterTransactionService
+    private readonly transanctionEntityFilter: TransactionEntityFilter
   ) {}
 
   find(
@@ -20,7 +20,9 @@ export class JsonDataTransactionService implements TransactionService {
     const transactions = this.jsonDataTransactionRepository.transform(data);
 
     if (filter && filter.text) {
-      return this.filterTransactionService.filter(transactions, filter);
+      return transactions.filter(data =>
+        this.transanctionEntityFilter.filter(data, filter.text)
+      );
     }
 
     return new UniqueEntityArray(transactions).items;

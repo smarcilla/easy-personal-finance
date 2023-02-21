@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { JsonFinanceDataAdapter, TransactionEntityFilter } from '..';
 import { FinanceTransactionEntity } from '../entities';
 import { JsonFinanceData } from '../entities/JsonFinanceData';
 import { FinanceTransactionService } from './FinanceTransactionService';
@@ -8,16 +9,16 @@ export class MemoryTransactionService implements FinanceTransactionService {
   constructor(private options: { data: JsonFinanceData[] }) {}
 
   private filter(filter: Partial<{ text: string }>): JsonFinanceData[] {
+    const transactionEntityFilter = new TransactionEntityFilter();
+    const adapter = new JsonFinanceDataAdapter();
+
     return filter?.text
-      ? this.options.data.filter(data => {
-          return (
-            data.amount.includes(filter.text!) ||
-            data.concept.includes(filter.text!) ||
-            data.date.includes(filter.text!) ||
-            data.movement.includes(filter.text!) ||
-            data.notes.includes(filter.text!)
-          );
-        })
+      ? this.options.data.filter(data =>
+          transactionEntityFilter.filter(
+            adapter.convertToTransactionEntity(data),
+            filter.text
+          )
+        )
       : this.options.data;
   }
 
