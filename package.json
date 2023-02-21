@@ -1,6 +1,6 @@
 {
   "name": "easy-personal-finance",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "Simple, friendly and poweful engine to manage your personal finances easily",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
