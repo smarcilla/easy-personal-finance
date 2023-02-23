@@ -6,6 +6,7 @@ import {
   TransactionData
 } from '../types/transactions.type';
 import { CsvFileTransactionService } from './CsvFileTransactionService';
+import { FilesDataServiceTransactionBuilder } from './files.data.transaction.service.builder';
 import { FinanceTransactionService } from './FinanceTransactionService';
 import { FormDataTransactionService } from './FormDataTransactionService';
 import { JsonFileTransactionService } from './JsonFileTransactionService';
@@ -72,13 +73,18 @@ export class MemoryFinanceTransactionServiceBuilder
 }
 
 export class FinanceTransactionServiceBuilder {
-  withType(type: 'json-data' | 'form-data'): TransactionServiceBuilder {
+  withType(
+    type: 'json-data' | 'form-data' | 'files-data'
+  ): TransactionServiceBuilder {
     switch (type) {
       case 'json-data':
         return new MemoryFinanceTransactionServiceBuilder();
 
       case 'form-data':
         return new FormDataFinanceTransactionServiceBuilder();
+
+      case 'files-data':
+        return new FilesDataServiceTransactionBuilder();
     }
   }
 }

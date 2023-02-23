@@ -25,4 +25,13 @@ export type CsvFinanceData = {
 
 export type FileFormatType = 'application/json' | 'text/csv';
 
-export type TransactionData = FormDataFormatDataType | JsonFinanceData[];
+export interface FileData {
+  name: string;
+  content: Buffer;
+  mimeType: FileFormatType;
+}
+
+export type TransactionData =
+  | FormDataFormatDataType
+  | JsonFinanceData[]
+  | Array<FileData>;
