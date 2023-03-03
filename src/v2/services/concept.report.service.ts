@@ -4,7 +4,7 @@ import { ReportHelperService } from '../interfaces/report.helper.service.interfa
 export class ConceptReportService
   implements ReportHelperService<ConceptReportEntity>
 {
-  getReport(): ConceptReportEntity {
+  getReport(): Promise<ConceptReportEntity> {
     throw new Error('Method not implemented.');
   }
 }

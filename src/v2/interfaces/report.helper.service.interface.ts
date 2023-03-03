@@ -1,3 +1,3 @@
 export interface ReportHelperService<T> {
-  getReport(): T;
+  getReport(): Promise<T>;
 }

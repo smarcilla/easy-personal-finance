@@ -4,7 +4,7 @@ import { ReportHelperService } from '../interfaces/report.helper.service.interfa
 export class MortgageReportService
   implements ReportHelperService<MortgageReportEntity>
 {
-  getReport(): MortgageReportEntity {
+  getReport(): Promise<MortgageReportEntity> {
     throw new Error('Method not implemented.');
   }
 }

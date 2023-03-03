@@ -6,14 +6,14 @@ import { NoteReportEntity } from './note.report.entity.interface';
 import { TotalReportEntity } from './total.report.entity.interface';
 
 export interface ReportService {
-  getReportByConcept(): ConceptReportEntity;
-  getReportByMovement(): MovementReportEntity;
-  getReportByNote(): NoteReportEntity;
-  getReport(): TotalReportEntity;
+  getReportByConcept(): Promise<ConceptReportEntity>;
+  getReportByMovement(): Promise<MovementReportEntity>;
+  getReportByNote(): Promise<NoteReportEntity>;
+  getReport(): Promise<TotalReportEntity>;
   /**
    * report related with 'hipoteca'
    */
-  getReportByMortgage(): MortgageReportEntity;
+  getReportByMortgage(): Promise<MortgageReportEntity>;
 
-  getReportByCategory(): CategoryReportEntity;
+  getReportByCategory(): Promise<CategoryReportEntity>;
 }

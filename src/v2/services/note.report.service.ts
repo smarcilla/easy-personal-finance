@@ -4,7 +4,7 @@ import { ReportHelperService } from '../interfaces/report.helper.service.interfa
 export class NoteReportService
   implements ReportHelperService<NoteReportEntity>
 {
-  getReport(): NoteReportEntity {
+  getReport(): Promise<NoteReportEntity> {
     throw new Error('Method not implemented.');
   }
 }

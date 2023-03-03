@@ -21,23 +21,23 @@ export class EasyFinanceReportService implements ReportService {
     private mortgageReportService: MortgageReportService
   ) {}
 
-  getReportByCategory(): CategoryReportEntity {
+  getReportByCategory(): Promise<CategoryReportEntity> {
     return this.categoryReportService.getReport();
   }
-  getReport(): TotalReportEntity {
+  getReport(): Promise<TotalReportEntity> {
     return this.totalReportService.getReport();
   }
-  getReportByConcept(): ConceptReportEntity {
+  getReportByConcept(): Promise<ConceptReportEntity> {
     return this.conceptReportService.getReport();
   }
-  getReportByMovement(): MovementReportEntity {
+  getReportByMovement(): Promise<MovementReportEntity> {
     return this.movementReportService.getReport();
   }
-  getReportByNote(): NoteReportEntity {
+  getReportByNote(): Promise<NoteReportEntity> {
     return this.noteReportService.getReport();
   }
 
-  getReportByMortgage(): MortgageReportEntity {
+  getReportByMortgage(): Promise<MortgageReportEntity> {
     return this.mortgageReportService.getReport();
   }
 }
